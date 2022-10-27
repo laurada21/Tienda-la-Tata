@@ -1,0 +1,35 @@
+{
+  "name": "tienda-la-tata",
+  "version": "1.0.0",
+  "description": "tienda",
+  "main": "sever.js",
+  "scripts": {
+    "start": "node back/sever.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon back/server",
+    "prod": "SET NODE_ENV=PRODUCTION$ nodemon back/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurada21/tienda-la-Tata.git"
+  },
+  "keywords": [
+    "huevos",
+    "chocolate",
+    "yogur"
+  ],
+  "author": "Laura Daniela Sandoval Solano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurada21/tienda-la-Tata/issues"
+  },
+  "homepage": "https://github.com/laurada21/tienda-la-Tata#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fcc-express-background": "^0.0.2",
+    "mongoose": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
