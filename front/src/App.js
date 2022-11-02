@@ -1,12 +1,21 @@
 
 import './App.css';
 import React from 'react';
+import Header from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Tienda La Tata</h1>
-      <img src='/images/Tienda-la-Tata.png'alt='Aqui va el logo'></img>
+     <Header/>
+     <center>contenido aqui</center>
+     <center>contenido aqui</center>
+     <center>contenido aqui</center>
+     <center>contenido aqui</center>
+     <center>contenido aqui</center>
+     <center>contenido aqui</center>
+     <Footer></Footer>
     </div>
   );
 }
