@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import "../../App.css"
-import { Link } from "react-router-dom"
+
 
 const Header = () => {
 
@@ -9,7 +9,7 @@ const Header = () => {
             <nav className='navbar row'>
                 <div className='col-2 col-md-3'>
                     <div className='navbar-brand'>
-                    <img src='./images/logo4 .png' alt ="Tienda Jose "></img>
+                    <img src='./images/tata.png' alt ="Tienda La Tata "></img>
                     
                     </div>
 
@@ -27,8 +27,8 @@ const Header = () => {
 
                             <div class="input-group-append">
                                 <button id='search-btn' class="btn">
-                                    <i class="fa fa fa " aria-hidden="true">
-                                     Buscar   </i>  
+                                    <i class="fa fa-search-plus fa-2x text-white " aria-hidden="true">
+                                       </i>  
 
                                 </button>
                             </div>
@@ -36,9 +36,18 @@ const Header = () => {
 
                     </div>
                    <div className='col-12 col-md-3 mt-4 mt-md-0 text-center'>
-                    <button className='btn' id='login-bt'>Inicie Sesión
-                    </button>
-                    <span id='cart' className='ml-3'>carrito</span>
+                    <span><button type="button" class="btn btn-outline-warning">Inicie Sesión
+                    </button></span>
+                    &nbsp;
+                    &nbsp;
+                    
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                 
+
+                    <i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="true"></i>
                     <span className='ml-1' id='cart_count'>2</span>
                    </div>
 
