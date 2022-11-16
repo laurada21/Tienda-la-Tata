@@ -7,16 +7,14 @@ const Header = () => {
     return (
         <Fragment>
             <nav className='navbar row'>
-                <div className='col-2 col-md-3'>
+                <div className='col-12 col-md-3'>
                     <div className='navbar-brand'>
-                    <img src='./images/tata.png' alt ="Tienda La Tata "></img>
+                    <img src='./images/jose.JPG' alt ="Tienda La Tata "></img>
                     
                     </div>
-
-
                 </div>
-
-                    <div className='col-12 col-md-6 mt-2 mt-md-0'>
+                &nbsp;
+                    <div className='col-12 col-md-4 mt-2 mt-md-0'>
                         <div className='input-group'>
                             <input
                             type="text"
@@ -24,7 +22,9 @@ const Header = () => {
                             class="form-control"
                             placeholder='¿Que producto busca?'>
                             </input>
-
+                        
+                            &nbsp;
+                            &nbsp;
                             <div class="input-group-append">
                                 <button id='search-btn' class="btn">
                                     <i class="fa fa-search-plus fa-2x text-white " aria-hidden="true">
@@ -35,13 +35,12 @@ const Header = () => {
                         </div>
 
                     </div>
-                   <div className='col-12 col-md-3 mt-4 mt-md-0 text-center'>
+                   <div className='col-12 col-md-4 mt-4 mt-md-0 text-center'>
                     <span><button type="button" class="btn btn-outline-warning">Inicie Sesión
                     </button></span>
                     &nbsp;
                     &nbsp;
-                    
-                    &nbsp;
+    
                     &nbsp;
                     &nbsp;
                     &nbsp;
