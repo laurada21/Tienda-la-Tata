@@ -27,7 +27,7 @@ const productosSchema = mongoose.Schema({
         {
             public_id:{
                 type:String,
-                requires:true
+                required:true
             },
             url:{
                 type:String,
@@ -41,13 +41,11 @@ const productosSchema = mongoose.Schema({
         required:[true,"Por favor seleccionar la categoria del producto."],
         enum:{
             values:[
-                "Alimento seco",
-                "Alimento humedo",
-                "Accesorios",
-                "Cuidado e Higiene",
-                "Medicamentos",
-                "Snacks",
-                "Juguetes"
+                "Alimento",
+                "Aseo",
+                "Hogar",
+                "Electrodomesticos"
+
 
             ]
         }
@@ -68,7 +66,7 @@ const productosSchema = mongoose.Schema({
     },
     opiniones:[
         {
-            nomCliente:{
+            nombreCliente:{
                 type:String,
                 required:true
             },

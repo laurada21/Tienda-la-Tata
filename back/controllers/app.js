@@ -1,8 +1,9 @@
 const express=require("express");
 const app = express();
 
-app.use(express.json());
 
+//Uso de constantes importadas
+app.use(express.json());
 //Importar rutas
 const productos=require("./routes/products")
 

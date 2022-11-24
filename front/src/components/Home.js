@@ -1,115 +1,58 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import MetaData from './layout/MetaData'
-
+import { useDispatch, useSelector} from 'react-redux'
+import { getProducts } from '../actions/productActions'
+import{Link} from 'react-router-dom'
 export const  Home = ()=> {
+  const{loading,productos,error}=useSelector(state=> state.products)
+    const dispatch=useDispatch();
+    useEffect(()=>{
+        dispatch(getProducts());
+    },[dispatch])
+
   return (
     <Fragment>
-      <MetaData title="Lo mejor para su familia ">
+      { loading ? <h1>Cargando...</h1>:(
+        <Fragment>
+        <MetaData title="Lo mejor para su familia ">
       </MetaData>
        <h1 id="cabezado_productos">Ultimos productos</h1>
        <section id='productos' className="container mt-5"> 
        <div className='row'>
-        {/*producto 1*/}
-        <div className='col-sm-12 col-md-6 col-leg-3 my-'>
+        {productos && productos.map(producto=>(
+        <div key={producto._id} className='col-sm-12 col-md-6 col-leg-3 my-'>
            <div className='card p-3 rounded'>
-            <img className='card-img-top mx-auto' src='./images/lentejas.jpg'alt='Lentejas'>
-              <div className='card-body d-flex flex-column'>
-                <h5 id='Titulo_producto'><a href='http://localhost:3000'>Lentejas Diana</a></h5>
+            <img className='card-img-top mx-auto' src={producto.imagen[0].url} alt={producto.imagen[0].public_id}>  </img>
+              <div className='card-body d-flex flex-column'></div>
+                <h5 id='Titulo_producto'>< Link to={`/producto/${producto._id}`}>{producto.nombre}</Link></h5>
                 <div className='rating mt-auto'>
                   <div className='rating-outer'>
-                    <div className='rating-inner'>
-                      <span id='No_de_opiniones'>3 reiews</span>
-                      <p className='card-text'>$4.000</p><a href='http://localhost:3000' id='view_btn'className='btn'btn-block>
+                    <div className='rating-inner' style={{width:`${(producto.Calificacion/5)*100}`}}></div>
+                    </div>
+                      <span id='No_de_opiniones'>{producto.numCalficaciones}Reviews</span>
+                      <p className='card-text'>${producto.precio}</p><Link to={`/producto${producto._id}`} id='view_btn'className='btn'btn-block>
                       Ver detalle
-                      </a>
-                      </div>
-                       </div>
-                       </div>
-                       </div>
-                       </img>
-                       </div>
-                       </div>
-                       {/*producto 2*/}
-                       <div className='col-sm-12 col-md-6 col-leg-3 my-'>
-                        <div className='card p-3 rounded'>
-                          <img className='card-img-top mx-auto' src='./images/frijol.jpg'alt='Frijol'>
-                          <div className='card-body d-flex flex-column'>
-                          <h5 id='Titulo_producto'><a href='http://localhost:3000'>Frijol Diana</a></h5>
-                          <div className='rating mt-auto'>
-                          <div className='rating-outer'>
-                          <div className='rating-inner'>
-                          <span id='No_de_opiniones'>4 reiews</span>
-                          <p className='card-text'>$5.500</p><a href='http://localhost:3000' id='view_btn'className='btn'btn-block>
-                      Ver detalle 
-                      </a>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                      </img>
-                      </div>
-                      </div>
-                      {/*producto 3*/}
-                      <div className='col-sm-12 col-md-6 col-leg-3 my-'>
-                        <div className='card p-3 rounded'>
-                          <img className='card-img-top mx-auto' src='./images/arroz.jpg'alt='Arroz'>
-                          <div className='card-body d-flex flex-column'>
-                          <h5 id='Titulo_producto'><a href='http://localhost:3000'>Arroz Diana</a></h5>
-                          <div className='rating mt-auto'>
-                          <div className='rating-outer'>
-                          <div className='rating-inner'>
-                          <span id='No_de_opiniones'>5 reiews</span>
-                          <p className='card-text'>$6.500</p><a href='http://localhost:3000' id='view_btn'className='btn'btn-block>
-                      Ver detalle 
-                      </a>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                      </img>
-                      </div>
-                      </div>
-                       {/*producto 4*/}
-                       <div className='col-sm-12 col-md-6 col-leg-3 my-'>
-                        <div className='card p-3 rounded'>
-                          <img className='card-img-top mx-auto' src='./images/aceite.jpg'alt='Aceite'>
-                          <div className='card-body d-flex flex-column'>
-                          <h5 id='Titulo_producto'><a href='http://localhost:3000'>Aceite Diana</a></h5>
-                          <div className='rating mt-auto'>
-                          <div className='rating-outer'>
-                          <div className='rating-inner'>
-                          <span id='No_de_opiniones'>11 reiews</span>
-                          <p className='card-text'>$16.500</p><a href='http://localhost:3000' id='view_btn'className='btn'btn-block>
-                      Ver detalle 
-                      </a>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                      </img>
-                      </div>
-                      </div>
+                      </Link>
+                      
+               
+                   </div>
+                     
+                </div>
+              </div>))}
+
+       
 
 
                       </div>
                       </section>
-                      </Fragment>
-                       )
-                      }
+        </Fragment>
+
+      )}
+      
+    </Fragment>
+  )
+}
                       
 export default Home 
   
                       
-                      
-                    
-                       
-                       
-                    
-                       
-                       
-                      
-                      
-                       
-                    
- 
-

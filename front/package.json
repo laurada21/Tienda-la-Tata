@@ -7,15 +7,24 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
+    "cloudinary": "^1.32.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mdbreact": "^4.6.1",
+    "mongoose": "^6.7.2",
+    "rc-slider": "^10.0.1",
     "react": "^18.2.0",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-js-pagination": "^3.0.2",
+    "react-native-uuid": "^2.0.1",
+    "react-paginate": "^8.1.3",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^5.0.1",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
@@ -44,5 +53,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

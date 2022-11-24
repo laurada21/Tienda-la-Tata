@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import "../../App.css"
 
 
+
 const Header = () => {
 
     return (
@@ -9,7 +10,7 @@ const Header = () => {
             <nav className='navbar row'>
                 <div className='col-12 col-md-3'>
                     <div className='navbar-brand'>
-                    <img src='./images/jose.JPG' alt ="Tienda La Tata "></img>
+                    <img src='./images/logo.png' alt ="Tienda La Tata "></img>
                     
                     </div>
                 </div>
@@ -56,5 +57,4 @@ const Header = () => {
     )
 
 }
-
 export default Header
