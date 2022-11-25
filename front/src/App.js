@@ -13,10 +13,21 @@ function App() {
     <Router>
     <div className="App">
       <Header />
+<<<<<<< Updated upstream
       <div className='container container-fluid'>
        
      </div>
      <Footer />
+=======
+      <div className='container container_fluid'>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/Home" element={<Home/>}/>
+        </Routes>
+      </div>
+  
+       <Footer/>
+>>>>>>> Stashed changes
     </div>
     </Router>
   );
