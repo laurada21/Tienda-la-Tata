@@ -1,9 +1,10 @@
 
 import './App.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import Home from './components/Home';
+import { ProductDetails } from './components/products/ProductDetails';
 //Router traido desde el react-router-dom(no confundir con router express)
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/Home" element={<Home/>}/>
+          <Route path='/producto/:id' element={<ProductDetails />}/>
         </Routes>
       </div>
   
