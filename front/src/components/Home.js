@@ -3,11 +3,17 @@ import MetaData from './layout/MetaData'
 import { useDispatch, useSelector} from 'react-redux'
 import { getProducts } from '../actions/productActions'
 import{Link} from 'react-router-dom'
+import { useAlert } from 'react-alert'
 export const  Home = ()=> {
-  const{loading,productos,error}=useSelector(state=> state.products)
-    const dispatch=useDispatch();
+  const{loading,products,error}=useSelector(state=> state.products)
+  const alert =useAlert();  
+  const dispatch=useDispatch();
     useEffect(()=>{
+      if(error){
+        return alert.error(error)
+      }
         dispatch(getProducts());
+        alert.success("OK")
     },[dispatch])
 
   return (
@@ -16,10 +22,10 @@ export const  Home = ()=> {
         <Fragment>
         <MetaData title="Lo mejor para su familia ">
       </MetaData>
-       <h1 id="cabezado_productos">Ultimos productos</h1>
+       <h1 id="cabezado_productos">Ultimos Productos</h1>
        <section id='productos' className="container mt-5"> 
-       <div className='row'>
-        {productos && productos.map(producto=>(
+       <div className ='row'>
+        {products && products.map(producto=>(
         <div key={producto._id} className='col-sm-12 col-md-6 col-leg-3 my-'>
            <div className='card p-3 rounded'>
             <img className='card-img-top mx-auto' src={producto.imagen[0].url} alt={producto.imagen[0].public_id}>  </img>
@@ -54,5 +60,3 @@ export const  Home = ()=> {
 }
                       
 export default Home 
-  
-                      

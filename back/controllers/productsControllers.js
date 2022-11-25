@@ -1,15 +1,21 @@
-
+const productos = require("../models/productos");
 const producto=require("../models/productos");
 
 
 // ver la lista de productos
 
 exports.getProducts=async(req,res,next) =>{
-    const products= await producto.find();
+    const productos= await producto.find();
+    if (!productos){
+        return res.status(404).json({
+            success: false,
+            error: true
+        })
+    }
         res.status(200).json({
         success:true,
-        cantidad:products.length,
-        products
+        cantidad:productos.length,
+        productos
        
     })
 }
@@ -17,8 +23,8 @@ exports.getProducts=async(req,res,next) =>{
 
 // ver producto por ID
 exports.getProductById=async(req,res,next)=>{
-    const product= await producto.findById(req.params.id) 
-    if(!product){
+    const Producto= await producto.findById(req.params.id) 
+    if(!producto){
         return res.status(404).json({
             success:false,
             message: 'No encontramos este producto'
@@ -27,7 +33,7 @@ exports.getProductById=async(req,res,next)=>{
         res.status(200).json({
         success:true,
         menssage:"Aqui debajo encuentras informacion sobre tu producto",
-        product
+        producto
        
     })
 }
@@ -61,7 +67,8 @@ exports.updateProduct=async(req,res,next) =>{
          if(!product){//Verifico que el objeto no existe para finalizar el proceso
              return res.status(404).json({
                  success:false,
-                 message: 'No encontramos este producto'
+                 message: 'No encontramos este producto',
+                 error:true
              })
          }
          await product.remove();
@@ -82,4 +89,3 @@ exports.newProduct=async(req,res,next)=>{
         product
     })
 }
-
