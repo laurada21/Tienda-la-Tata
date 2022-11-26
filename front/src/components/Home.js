@@ -12,6 +12,7 @@ export const Home = () => {
     if (error) {
       return alert.error(error)
     }
+
     dispatch(getProducts());
     alert.success("OK")
   }, [dispatch])
