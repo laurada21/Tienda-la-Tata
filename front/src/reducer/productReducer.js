@@ -11,7 +11,7 @@ import {
             case ALL_PRODUCTS_REQUEST:
                 return {
                     loading: true,
-                    products: [] /*s */
+                    products: [] 
                 }
     
             case ALL_PRODUCTS_SUCCESS:
@@ -41,8 +41,7 @@ import {
     
 
 //REDUCER PARA TENER TODOS LOS DETALLES
-export const productDetailsReducer = (state = {product:{}},action)=>{ /*agrego y queda products */
-    
+export const productDetailsReducer = (state = {product:{}},action)=>{ 
         switch (action.type) {
             case PRODUCT_DETAILS_REQUEST:
            
@@ -55,7 +54,7 @@ export const productDetailsReducer = (state = {product:{}},action)=>{ /*agrego y
             case  PRODUCT_DETAILS_SUCCESS:
                 return {
                     loading: false,
-                    product: action.payload /* agrego s*/
+                    product: action.payload 
                    
                 }
     
